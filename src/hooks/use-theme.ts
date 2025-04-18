@@ -5,6 +5,8 @@ type Theme = 'light' | 'dark';
 
 export const useTheme = () => {
   const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window === 'undefined') return 'dark';
+    
     // Check local storage first
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'light' || savedTheme === 'dark') {
@@ -19,7 +21,7 @@ export const useTheme = () => {
     const root = window.document.documentElement;
     
     // Remove both classes before adding the current theme
-    root.classList.remove('light', 'dark');
+    root.classList.remove('dark', 'light');
     root.classList.add(theme);
     
     // Save theme preference to local storage
