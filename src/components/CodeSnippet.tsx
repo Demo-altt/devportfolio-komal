@@ -48,7 +48,7 @@ const CodeSnippet = () => {
           <br />
           {"  "}
           <span className="text-purple-400">hireable</span>:{" "}
-          <span className="text-pink-400">() =></span>{" "}
+          <span className="text-pink-400">() =&gt;</span>{" "}
           <span className="text-yellow-400">true</span>
           <br />
           {"}"};
